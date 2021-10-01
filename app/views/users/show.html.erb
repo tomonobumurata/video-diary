@@ -1,2 +1,8 @@
-<p>ここはマイページです<p>
-<li><%= link_to '編集', edit_user_path(current_user.id) %></li>
+
+<%= render "shared/header" %>
+
+<div class="edit">
+  <li><%= link_to '編集', edit_user_path(current_user.id) %></li>
+</div>
+
+<%= render "shared/footer" %>
