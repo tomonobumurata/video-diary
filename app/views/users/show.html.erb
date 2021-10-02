@@ -1,8 +1,26 @@
 
 <%= render "shared/header" %>
 
-<div class="edit">
-  <li><%= link_to '編集', edit_user_path(current_user.id) %></li>
+<div class="main">
+  <div class="mypage-profile">
+    <div class="username">
+      <%= current_user.nickname %>
+    </div>
+    <div class="introduction">
+      <%= current_user.introduction %>
+    </div>
+  </div>
+
+  <div class="mypage-nav">
+    <ul>
+      <li class="nav"><%= link_to 'Post', '#', class: 'nav-text' %></li>
+      <li class="nav"><%= link_to 'Recomend', '#', class: 'nav-text' %></li>
+      <li class="nav"><%= link_to 'Edit Account', edit_user_path(current_user.id), class: 'nav-text' %></li>
+    </ul>
+  </div>
+
+  <div class="posts">
+  </div>
 </div>
 
 <%= render "shared/footer" %>
