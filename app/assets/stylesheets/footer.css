@@ -1,0 +1,146 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+@import "https://ko-official.site/coding-parts-template/wp-content/themes/CPS/css/reset.min.css";
+
+/* 共通 ------------------------------*/
+*[class*="cp-"],
+*[class*="cp-"] * {
+    box-sizing: border-box;
+}
+
+/* 画像 */
+img {
+    vertical-align: bottom;
+}
+
+/* フッター ------------------------------*/
+.cp-footer03 {
+    background: #707070;
+}
+
+.cp-footer03__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1065px;
+    margin: auto;
+    padding: 24px 20px;
+}
+
+.cp-footer03__content {
+    display: flex;
+}
+
+.cinema-scope {
+  width: 100%;
+  height: 80px;
+  background-color: #3a3a3a;
+}
+
+/* ロゴ */
+.cp-footer03__logo {
+    margin-right: 36px;
+}
+
+.cp-footer03__logo a {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* ナビゲーション */
+.cp-footer03__navi__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 28px;
+}
+.cp-footer03__navi__item a {
+    display: inline-block;
+    padding: 12px;
+    transition: .2s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+}
+.cp-footer03__navi__item a:hover {
+    opacity: 0.7;
+}
+
+/* SNSアイコン */
+.cp-footer03__icons {
+    display: flex;
+}
+.cp-footer03__icon:not(:last-child) {
+    margin-right: 24px;
+}
+.cp-footer03__icon a {
+    font-size: 38px;
+    color: #fff;
+    transition: .2s ease-in-out;
+}
+.cp-footer03__icon a:hover {
+    opacity: 0.7;
+}
+
+/* コピーライト */
+.cp-footer03__copywriter {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+    text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+    .cp-footer03__container {
+        display: block;
+        padding: 40px 20px;
+    }
+
+    .cp-footer03__content {
+        display: block;
+    }
+
+    /* ロゴ */
+    .cp-footer03__logo {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    /* ナビゲーション */
+    .cp-footer03__navi__items {
+        justify-content: center;
+        margin: 20px 0 0;
+    }
+
+    /* SNSアイコン */
+    .cp-footer03__icons {
+        justify-content: center;
+        margin-top: 12px;
+    }
+
+    /* コピーライト */
+    .cp-footer03__copywriter {
+        margin-top: 32px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .cp-footer03__container {
+        display: block;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    /* ロゴ */
+    .cp-footer03__logo {
+        text-align: center;
+    }
+
+    /* ナビゲーション */
+    .cp-footer03__navi {
+        display: block;
+        margin-top: 32px;
+    }
+}

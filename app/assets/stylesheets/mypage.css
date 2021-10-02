@@ -1,0 +1,59 @@
+.main {
+  height: 1020px;
+}
+
+.mypage-profile {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px;
+
+}
+
+.mypage-profile .username {
+  font-size: 45px;
+  display: inline-block;
+  height: 100px;
+  letter-spacing: 2px;
+  padding: 20px;
+}
+
+.mypage-profile .introduction {
+  display: inline-block;
+  border: solid 3px black;
+  font-size: 30px;
+  padding: 20px;
+  width: 50%;
+}
+
+.mypage-nav {
+  height: 120px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 120px;
+}
+
+.mypage-nav .nav {
+  display: inline-block;
+  border: solid 1px #a9a9a9;
+  height: 60px;
+  line-height: 60px;
+  width: 200px;
+  font-size: 25px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  
+}
+
+.mypage-nav .nav-text {
+  text-decoration: none;
+  color: #696969;
+}
+
+.main .posts {
+  border: solid 1px #a9a9a9;
+}

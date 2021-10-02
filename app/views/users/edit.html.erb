@@ -1,0 +1,52 @@
+<div class="account-page">
+  <div class="account-page-inner">
+    <div class="account-page-header account-page-left">
+      <h2>Edit Account</h2>
+      <h4>アカウントの編集</h4>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+      <%= link_to "TOPページに戻る", root_path, class: 'btn'%>
+    </div>
+
+    <div class="account-page-right">
+      <%= form_with model: current_user, local: true do |f| %>
+        <div class="field">
+          <div class="form-text-wrap">
+            <label class="form-text">ニックネーム</label>
+          </div>
+          <%= f.text_field :nickname, class:"input-default", id:"nickname", autofocus: true, maxlength:"40" %>
+        </div>
+
+        <div class="field">
+          <div class="form-text-wrap">
+            <label class="form-text">プロフィール</label>
+          </div>
+          <%= f.text_area :introduction, size: "20x5", class:"input-default", id:"introduction", placeholder:"映画・アニメ好きの〇〇歳です。私の好きなジャンルは〇〇で、その中でも特に好きな作品は〇〇です！よろしくお願いします！"%>
+        </div>
+
+        <div class="field">
+          <div class="form-text-wrap">
+            <label class="form-text">生年月日</label>
+          </div>
+          <div class="birth-wrap">
+            <%= raw sprintf(
+              f.date_select(
+                :birthday,
+                class:"select-birth",
+                id:"birth-date",
+                use_month_numbers: true,
+                prompt:"--",
+                start_year: 1930,
+                end_year: (Time.now.year - 5),
+                date_separator: "%s"),
+              "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+          </div>
+        </div>
+
+        <div class='actions'>
+          <%= f.submit "Update", class: 'btn'%>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
