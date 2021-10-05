@@ -1,0 +1,69 @@
+<%= render "shared/header" %>
+
+<div class="review-main">
+  <div class="review-main-flame">
+    <h2 class="review-post-title">レビュー内容の入力</h2>
+
+    <%= form_with model: @review, local: true do |f| %>
+
+      <div class="img-upload">
+        <div class="item-text">
+          作品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>クリックしてファイルをアップロードしてください</p>
+          <%= f.file_field :image, id: 'review-image' %>
+        </div>
+      </div>
+
+      <div class="review-title">
+        <div class="item-text">
+          作品のタイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class: 'title-text', id: 'review-title', placeholder: 'タイトル', maxlength: '100' %>
+      </div>
+
+      <div class="review-star">
+        <div class="item-text">
+          評価
+          <span class="indispensable">必須</span>
+        </div>
+        <%# <%=  f.collection_select(:star_id, Star.all, :id, :name, {}, { class:'select-box', id: 'review-star' })%>
+      </div>
+
+      <div class="review-genre">
+        <div class="item-text">
+          ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%# <%=  f.collection_select(:genre_id, Genre.all, :id, :name, {}, { class:'select-box', id: 'review-genre' })%>
+      </div>
+
+      <div class="review-date">
+        <div class="item-text">
+          視聴日時
+        </div>
+      </div>
+
+      <div class="review-place">
+        <div class="item-text">
+          視聴方法
+        </div>
+        <%# <%=  f.collection_select(:place_id, Place.all, :id, :name, {}, { class:'select-box', id: 'review-place' })%>
+      </div>
+
+      <div class="review-impression">
+        <div class="item-text">
+          感想
+        </div>
+        <%= f.text_area :impression, class: 'review-text',id: 'review-impression', maxlength: '3000', placeholder: '作品の感想(3000文字まで)    例)大好きな映画だったので、公開日に映画館に見にいきました。とても面白かったです！特に好きだったシーンはラストの所です。主人公とヒロインのセリフがとても感動しました。' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>
