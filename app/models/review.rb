@@ -2,6 +2,11 @@ class Review < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :genre
+  belongs_to :star
+  belongs_to :place
+
   with_options presence: true do
     validates :title
     validates :genre_id

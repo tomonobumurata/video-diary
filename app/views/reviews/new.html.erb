@@ -38,7 +38,7 @@
           ジャンル
           <span class="indispensable">必須</span>
         </div>
-        <%# <%=  f.collection_select(:genre_id, Genre.all, :id, :name, {}, { class:'select-box', id: 'review-genre' })%>
+        <%=  f.collection_select(:genre_id, Genre.all, :id, :name, {}, { class:'select-box', id: 'review-genre' }) %>
       </div>
 
       <div class="review-date">
@@ -51,7 +51,7 @@
         <div class="item-text">
           視聴方法
         </div>
-        <%# <%=  f.collection_select(:place_id, Place.all, :id, :name, {}, { class:'select-box', id: 'review-place' })%>
+        <%=  f.collection_select(:place_id, Place.all, :id, :name, {}, { class:'select-box', id: 'review-place' })%>
       </div>
 
       <div class="review-impression">
