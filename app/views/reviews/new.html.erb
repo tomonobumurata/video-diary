@@ -27,10 +27,23 @@
 
       <div class="review-star">
         <div class="item-text">
-          評価
+          <%= f.label :star_id, "評価" %>
           <span class="indispensable">必須</span>
         </div>
-        <%# <%=  f.collection_select(:star_id, Star.all, :id, :name, {}, { class:'select-box', id: 'review-star' })%>
+        <div class="field" id="star">
+          
+          <%= f.hidden_field :star_id, id: :review_star %>
+          <script>
+            $('#star').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'review[star_id]',  
+              half: true,   
+            });
+          </script>
+        </div>
       </div>
 
       <div class="review-genre">
@@ -45,6 +58,7 @@
         <div class="item-text">
           視聴日時
         </div>
+        <%= f.date_field :date, id: 'review-date' %>
       </div>
 
       <div class="review-place">
