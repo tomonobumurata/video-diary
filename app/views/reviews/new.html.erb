@@ -75,6 +75,10 @@
         <%= f.text_area :impression, class: 'review-text',id: 'review-impression', maxlength: '3000', placeholder: '作品の感想(3000文字まで)    例)大好きな映画だったので、公開日に映画館に見にいきました。とても面白かったです！特に好きだったシーンはラストの所です。主人公とヒロインのセリフがとても感動しました。' %>
       </div>
 
+      <div class="review-submit">
+        <%= f.submit "投稿する", class: 'submit' %>
+      </div>
+
     <% end %>
   </div>
 </div>

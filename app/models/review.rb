@@ -4,7 +4,6 @@ class Review < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
-  belongs_to :star
   belongs_to :place
 
   with_options presence: true do
@@ -16,7 +15,6 @@ class Review < ApplicationRecord
 
   with_options numericality: { other_than: 1 } do
     validates :genre_id
-    validates :star_id
     validates :place_id
   end
 end

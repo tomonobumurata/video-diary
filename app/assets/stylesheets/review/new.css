@@ -64,7 +64,8 @@
   padding: 10px 10px 5px;
   border-radius: 4px;
   border: 2px solid #ccc;
-  font-size: 23px;
+  letter-spacing: 3px;
+  font-size: 25px;
   resize: none;
 }
 
@@ -86,21 +87,41 @@
 }
 
 .review-star {
-  margin-top: 2vh;
+  margin-top: 4vh;
 }
 
 .review-genre {
-  margin-top: 2vh;
+  margin-top: 4vh;
 }
 
 .review-date {
-  margin-top: 2vh;
+  margin-top: 4vh;
 }
 
 .review-place {
-  margin-top: 2vh;
+  margin-top: 4vh;
 }
 
 .review-impression {
-  margin-top: 2vh;
+  margin-top: 4vh;
+}
+
+.review-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff7050;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 30px;
 }
