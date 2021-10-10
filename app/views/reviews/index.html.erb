@@ -11,4 +11,23 @@
   <li><%= link_to '新規登録', new_user_registration_path %></li>
 <% end %>
 
+<div class="review-contents">
+  <h2 class="title">New Diaries</h2>
+  <div class="reviews">
+    <ul class="review-lists">
+      <% @review.each do |review| %>
+        <li class="list">
+          <%# <%= link_to review_path(review.id) do 投稿詳細ページへのリンク %>  
+            <div class="review-img-content">
+              <%= image_tag review.image, class: 'review-image' %>
+            </div>
+          <%# <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
 <%= render "shared/footer" %>

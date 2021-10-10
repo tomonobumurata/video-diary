@@ -7,8 +7,8 @@
   </div>
   <div class="box box-nav">
     <ul class="inner-nav">
-      <li class="menu">Top</li>
-      <li class="menu">Logout</li>
+      <li class="menu"><%= link_to 'Top', root_path, class: 'menu' %></li>
+      <li class="menu"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'menu' %></li>
       <li class="menu"><%= link_to 'New', new_review_path, class: 'menu' %></li>
       <li class="menu">menu4</li>
       <li class="menu">menu5</li>
