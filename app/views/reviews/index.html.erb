@@ -1,15 +1,6 @@
 <%= render "shared/header" %>
 
-<% if user_signed_in? %>
-  <div class="user-name">
-  こんにちは、<%= current_user.nickname %>さん
-  </div>
-  <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
-  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-<% else %>
-  <li><%= link_to 'ログイン', new_user_session_path %></li>
-  <li><%= link_to '新規登録', new_user_registration_path %></li>
-<% end %>
+
 
 <div class="review-contents">
   <h2 class="title">New Diaries</h2>
@@ -17,11 +8,11 @@
     <ul class="review-lists">
       <% @review.each do |review| %>
         <li class="list">
-          <%# <%= link_to review_path(review.id) do 投稿詳細ページへのリンク %>  
+          <%= link_to review_path(review.id) do %>  
             <div class="review-img-content">
               <%= image_tag review.image, class: 'review-image' %>
             </div>
-          <%# <% end %>
+          <% end %>
         </li>
       <% end %>
     </ul>

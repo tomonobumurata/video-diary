@@ -8,10 +8,15 @@
   <div class="box box-nav">
     <ul class="inner-nav">
       <li class="menu"><%= link_to 'Top', root_path, class: 'menu' %></li>
-      <li class="menu"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'menu' %></li>
-      <li class="menu"><%= link_to 'New', new_review_path, class: 'menu' %></li>
-      <li class="menu">menu4</li>
-      <li class="menu">menu5</li>
+      <% if user_signed_in?%>
+        <li class="menu"><%= link_to 'Mypage', user_path(current_user.id), class: 'menu' %></li>
+        <li class="menu"><%= link_to 'New', new_review_path, class: 'menu' %></li>
+        <li class="menu"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'menu' %></li>
+      <% else %>
+        <li class="menu"><%= link_to 'Login', new_user_session_path, class: 'menu' %></li>
+        <li class="menu"><%= link_to 'Create Account', new_user_registration_path, class: 'menu' %></li>
+      <% end %>
+      
     </ul>
   </div>
 </header>

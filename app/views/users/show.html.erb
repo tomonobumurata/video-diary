@@ -19,7 +19,21 @@
     </ul>
   </div>
 
-  <div class="posts">
+  <div class="review-contents">
+  <h2 class="title">My Diaries</h2>
+    <div class="reviews">
+      <ul class="review-lists">
+        <% @reviews.each do |review| %>
+          <li class="list">
+            <%= link_to review_path(review.id) do %>  
+              <div class="review-img-content">
+                <%= image_tag review.image, class: 'review-image' %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
 

@@ -1,6 +1,3 @@
-.main {
-  height: 1020px;
-}
 
 .mypage-profile {
   display: flex;
@@ -44,14 +41,14 @@
   padding: 10px;
   margin: 10px;
   text-align: center;
-  background-color: #d3d3d3;
+  background-color: #ff7050;
   border-radius: 10px;
   
 }
 
 .mypage-nav .nav-text {
   text-decoration: none;
-  color: #696969;
+  color: #fff;
 }
 
 .main .posts {
