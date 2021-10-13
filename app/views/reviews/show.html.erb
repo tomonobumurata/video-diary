@@ -1,7 +1,56 @@
 <%= render "shared/header" %>
 
 <div class="review-show">
-  
+  <div class="review-box">
+    <div class="video-main">
+      <h1 class="video-title">
+        <%= @review.title %>
+      </h2>
+
+      <div class="video-img">
+        <%= image_tag @review.image, class: 'movie-box-img'%>
+      </div>
+    </div>
+
+    <div class="video-main-text">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-item">評価</th>
+            <td class="detail-value"><%= @review.star_id %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">ジャンル</th>
+            <td class="detail-value"><%= @review.genre.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">試聴日時</th>
+            <td class="detail-value"><%= @review.date %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">試聴方法</th>
+            <td class="detail-value"><%= @review.place.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">感想</th>
+            <td class="detail-value"><%= @review.impression %></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @review.user_id %>
+        <%= link_to '投稿の編集', root_path, class: 'review-btn' %>
+        <%= link_to '投稿の削除', root_path, class: 'review-btn' %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
