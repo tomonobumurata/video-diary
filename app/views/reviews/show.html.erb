@@ -17,7 +17,20 @@
         <tbody>
           <tr>
             <th class="detail-item">評価</th>
-            <td class="detail-value"><%= @review.star_id %></td>
+            <td class="detail-value">
+                <div id="star-rate-<%= @review.id %>"></div>
+                <script>
+                $('#star-rate-<%= @review.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= @review.star_id %>,
+                });
+                </script>
+            </td>
           </tr>
 
           <tr>
@@ -46,8 +59,10 @@
 
     <% if user_signed_in? %>
       <% if current_user.id == @review.user_id %>
-        <%= link_to '投稿の編集', root_path, class: 'review-btn' %>
-        <%= link_to '投稿の削除', root_path, class: 'review-btn' %>
+        <div class="review-btns">
+          <%= link_to '投稿の編集', root_path, class: 'review-btn' %>
+          <%= link_to '投稿の削除', root_path, class: 'review-btn' %>
+        </div>
       <% end %>
     <% end %>
   </div>

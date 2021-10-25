@@ -8,14 +8,14 @@
 }
 
 .review-box {
-  width: 70vw;
+  width: 1000px;
   border: solid 1px black;
   padding: 10vh 15vw;
-  min-width: 1200px;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10vh 0;
 }
 
 .video-main {
@@ -62,4 +62,23 @@
   padding: 10%;
   border: 1px solid #dedede;
   font-size: 25px;
+}
+
+.review-btns {
+  display: flex;
+}
+
+.review-btn {
+  display: inline-block;
+  height: 70px;
+  padding: 0 30px;
+  line-height: 70px;
+  letter-spacing: 2px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ff7050;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  text-decoration: none;
 }
