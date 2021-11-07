@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # get 'reviews/index'
   root to: "reviews#index"
   resources :users, only: [:show, :edit, :update]
-  resources :reviews, only: [:index, :new, :create, :show]
+  resources :reviews, only: [:index, :new, :create, :show, :edit, :update]
 end

@@ -20,6 +20,10 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
   private
 
   def review_params
