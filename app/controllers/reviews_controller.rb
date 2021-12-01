@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_review, only: [:show, :edit, :update, :destroy]
+
   def index
     @review = Review.all
   end
@@ -17,15 +20,12 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(params[:id])
   end
 
   def edit
-    @review = Review.find(params[:id])
   end
 
   def update
-    @review = Review.find(params[:id])
     if @review.update(review_params)
       redirect_to review_path(@review.id)
     else
@@ -34,7 +34,6 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
     @review.destroy
     redirect_to root_path
   end
@@ -43,5 +42,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:image, :title, :date, :genre_id, :star_id, :place_id, :impression).merge(user_id: current_user.id)
+  end
+
+  def find_review
+    @review = Review.find(params[:id])
   end
 end
