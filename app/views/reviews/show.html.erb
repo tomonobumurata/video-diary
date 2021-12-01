@@ -60,7 +60,7 @@
     <% if user_signed_in? %>
       <% if current_user.id == @review.user_id %>
         <div class="review-btns">
-          <%= link_to '投稿の編集', root_path, class: 'review-btn' %>
+          <%= link_to '投稿の編集', edit_review_path, class: 'review-btn' %>
           <%= link_to '投稿の削除', root_path, class: 'review-btn' %>
         </div>
       <% end %>
