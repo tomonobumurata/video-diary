@@ -28,6 +28,12 @@
   padding: 30px;
 }
 
+.user-name {
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
+
 .movie-box-img {
   height: 50vh;
   width: 60vw;

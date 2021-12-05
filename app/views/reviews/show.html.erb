@@ -16,6 +16,11 @@
       <table class="detail-table">
         <tbody>
           <tr>
+            <th class="detail-item">投稿者</th>
+            <td class="detail-value"><%= link_to @review.user.nickname, user_path(@review.user_id),  class: 'user-name' %></td>
+          </tr>
+
+          <tr>
             <th class="detail-item">評価</th>
             <td class="detail-value">
                 <div id="star-rate-<%= @review.id %>"></div>
