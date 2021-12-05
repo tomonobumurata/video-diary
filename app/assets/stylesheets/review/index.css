@@ -1,0 +1,26 @@
+.review-contents {
+  width: 80%;
+  padding: 20px;
+  margin: 50px auto;
+  border-right: 3px solid #3ccace;
+  border-left: 3px solid #3ccace;
+  background: rgb(241,241,244);
+  background: linear-gradient(90deg, rgba(241,241,244,1) 25%, rgba(80,75,75,1) 100%, rgba(211,114,6,1) 100%);
+}
+
+.review-contents .title {
+  font-size: 3vh;
+  font-weight: bold;
+  color: #3ccace;
+  margin-bottom: 20px;
+}
+
+.review-lists .list {
+  width: 300px;
+  padding: 5px;
+  
+}
+
+.review-image {
+  width: 100%;
+}

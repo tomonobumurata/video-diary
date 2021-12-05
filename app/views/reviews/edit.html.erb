@@ -1,0 +1,87 @@
+<%= render "shared/header" %>
+
+
+<div class="review-main">
+  <div class="review-main-flame">
+    <h2 class="review-post-title">投稿内容の変更</h2>
+
+    <%= form_with model: @review, local: true do |f| %>
+
+      <div class="img-upload">
+        <div class="item-text">
+          作品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>クリックしてファイルをアップロードしてください</p>
+          <%= f.file_field :image, id: 'review-image' %>
+        </div>
+      </div>
+
+      <div class="review-title">
+        <div class="item-text">
+          作品のタイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class: 'title-text', id: 'review-title', placeholder: 'タイトル', maxlength: '100' %>
+      </div>
+
+      <div class="review-star">
+        <div class="item-text">
+          <%= f.label :star_id, "評価" %>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="field" id="star">
+          
+          <%= f.hidden_field :star_id, id: :review_star %>
+          <script>
+            $('#star').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'review[star_id]',  
+              half: true,   
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="review-genre">
+        <div class="item-text">
+          ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%=  f.collection_select(:genre_id, Genre.all, :id, :name, {}, { class:'select-box', id: 'review-genre' }) %>
+      </div>
+
+      <div class="review-date">
+        <div class="item-text">
+          視聴日時
+        </div>
+        <%= f.date_field :date, id: 'review-date' %>
+      </div>
+
+      <div class="review-place">
+        <div class="item-text">
+          視聴方法
+        </div>
+        <%=  f.collection_select(:place_id, Place.all, :id, :name, {}, { class:'select-box', id: 'review-place' })%>
+      </div>
+
+      <div class="review-impression">
+        <div class="item-text">
+          感想
+        </div>
+        <%= f.text_area :impression, class: 'review-text',id: 'review-impression', maxlength: '3000', placeholder: '作品の感想(3000文字まで)    例)大好きな映画だったので、公開日に映画館に見にいきました。とても面白かったです！特に好きだったシーンはラストの所です。主人公とヒロインのセリフがとても感動しました。' %>
+      </div>
+
+      <div class="review-submit">
+        <%= f.submit "変更する", class: 'submit' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

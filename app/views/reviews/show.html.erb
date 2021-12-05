@@ -1,0 +1,76 @@
+<%= render "shared/header" %>
+
+<div class="review-show">
+  <div class="review-box">
+    <div class="video-main">
+      <h1 class="video-title">
+        <%= @review.title %>
+      </h2>
+
+      <div class="video-img">
+        <%= image_tag @review.image, class: 'movie-box-img'%>
+      </div>
+    </div>
+
+    <div class="video-main-text">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-item">投稿者</th>
+            <td class="detail-value"><%= link_to @review.user.nickname, user_path(@review.user_id),  class: 'user-name' %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">評価</th>
+            <td class="detail-value">
+                <div id="star-rate-<%= @review.id %>"></div>
+                <script>
+                $('#star-rate-<%= @review.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= @review.star_id %>,
+                });
+                </script>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">ジャンル</th>
+            <td class="detail-value"><%= @review.genre.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">試聴日時</th>
+            <td class="detail-value"><%= @review.date %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">試聴方法</th>
+            <td class="detail-value"><%= @review.place.name %></td>
+          </tr>
+
+          <tr>
+            <th class="detail-item">感想</th>
+            <td class="detail-value"><%= @review.impression %></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @review.user_id %>
+        <div class="review-btns">
+          <%= link_to '投稿の編集', edit_review_path(@review.id), class: 'review-btn' %>
+          <%= link_to '投稿の削除', review_path(@review.id), method: :delete, class: 'review-btn' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

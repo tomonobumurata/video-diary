@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string     :title,    null: false
       t.date       :date
       t.integer    :genre_id, null: false
-      t.integer    :star_id,  null: false
+      t.float      :star_id,  null: false
       t.integer    :place_id
       t.text       :impression
       t.references :user,     null: false, foreign_key: true

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, only: [:edit, :update]
   def show
     @nickname = current_user.nickname
-    # @reviews = current_user.reviews
+    @reviews = current_user.reviews
   end
 
   def edit

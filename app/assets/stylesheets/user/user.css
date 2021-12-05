@@ -34,7 +34,7 @@
   display: block;
   width: 100px;
   margin-top: 5px;
-  border-bottom: 1px solid #38aef3
+  border-bottom: 1px solid #ff7050;
 }
 
 .account-page .account-page-header h4 {
@@ -69,7 +69,7 @@
   text-align: center;
   border: none;
   border-radius: 5px;
-  background-color: #38aef3;
+  background-color: #ff7050;
   color: #fff;
   cursor: pointer;
   margin-top: 10px;
